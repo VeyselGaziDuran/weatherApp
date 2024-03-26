@@ -1,12 +1,13 @@
-import React from 'react'
 import './WatherApp.css'
-import serch_icon from '../Assets/PhosphorIcons/cloud.png'
 
 const WatherApp = () => {
     return (
         <div className='container'>
-            <div className="top-bar">
-                <input type="text" className='cityInput' placeholder='Search' />
+            <img src="/src/Assets/Logo/logo-lg.png" alt="Weather Logo" className="logo"></img>
+            <div className="content">
+                <div className="text1">Welcome To <span className='text1-2'>TypeWeather</span></div>
+                <div className="text2">Choose a location to see the weather forecast</div>
+                <input type="text" className='cityInput' placeholder='Search location' />
             </div>
         </div>
     )
