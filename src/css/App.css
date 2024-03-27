@@ -1,0 +1,183 @@
+@import './utils/root.css';
+@import './weather-app.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/assets/w-bg.png');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Fonts */
+
+.text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--line-height-lg);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-lg);
+}
+
+.text-md {
+  font-size: var(--text-md);
+  line-height: var(--line-height-lg);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--line-height-lg);
+}
+
+.heading-xs {
+  font-size: var(--heading-xs);
+  line-height: var(--line-height-lg);
+}
+
+.heading-sm {
+  font-size: var(--heading-sm);
+  line-height: var(--line-height-lg);
+}
+
+.heading-md {
+  font-size: var(--heading-md);
+  line-height: var(--line-height-lg);
+}
+
+.heading-lg {
+  font-size: var(--heading-lg);
+  line-height: var(--line-height-lg);
+}
+
+.heading-xl {
+  font-size: var(--heading-xl);
+  line-height: var(--line-height-md);
+}
+
+.heading-hg {
+  font-size: var(--heading-hg);
+  line-height: var(--line-height-sm);
+}
+
+/* Font Weight */
+
+.text-bold {
+  font-weight: var(--text-bold);
+}
+
+.text-extrabold {
+  font-weight: var(--text-extrabold);
+}
+
+/* Colors */
+.text-gray-100 {
+  color: var(--gray-100);
+}
+
+.text-gray-200 {
+  color: var(--gray-200);
+}
+
+.text-gray-300 {
+  color: var(--gray-300);
+}
+
+.text-gray-400 {
+  color: var(--gray-400);
+}
+
+.text-gray-500 {
+  color: var(--gray-500);
+}
+
+.text-gray-600 {
+  color: var(--gray-600);
+}
+
+.text-gray-700 {
+  color: var(--gray-700);
+}
+
+.text-gray-800 {
+  color: var(--gray-800);
+}
+
+.text-gray-900 {
+  color: var(--gray-900);
+}
+
+.text-blue-light {
+  color: var(--blue-light);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.background-gray-100 {
+  background-color: var(--gray-100);
+}
+
+.background-gray-200 {
+  background-color: var(--gray-200);
+}
+
+.background-gray-300 {
+  background-color: var(--gray-300);
+}
+
+.background-gray-400 {
+  background-color: var(--gray-400);
+}
+
+.background-gray-500 {
+  background-color: var(--gray-500);
+}
+
+.background-gray-600 {
+  background-color: var(--gray-600);
+}
+
+.background-gray-700 {
+  background-color: var(--gray-700);
+}
+
+.background-gray-800 {
+  background-color: var(--gray-800);
+}
+
+.background-gray-900 {
+  background-color: var(--gray-900);
+}
+
+.background-blue-light {
+  background-color: var(--blue-light);
+}
+
+.background-white {
+  background-color: var(--white);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-center-wrap {
+  text-align: center;
+  text-wrap: pretty;
+}
