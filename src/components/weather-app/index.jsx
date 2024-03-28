@@ -1,4 +1,7 @@
-const WatherApp = () => {
+import React from 'react'
+import WeatherData from '../weather-data/index'
+
+const WeatherApp = () => {
   return (
     <main className="home-container">
       <figure className="img-container">
@@ -9,14 +12,11 @@ const WatherApp = () => {
           Welcome To <span className="text-blue-light">TypeWeather</span>
         </div>
         <div className="text-gray-200 text-sm text-center-wrap">Choose a location to see the weather forecast</div>
-        <div className="city-input background-gray-600">
-          <input type="text" className="text-md text-gray-400" id="city-input" placeholder="Search location" />
-          <label htmlFor="city-input" className="sr-only">
-            City
-          </label>
-        </div>
+        {/* WeatherData bileşenini ekleyin */}
+        <WeatherData />
       </div>
     </main>
   )
 }
-export default WatherApp
+
+export default WeatherApp
