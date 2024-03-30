@@ -26,18 +26,22 @@ const Search = () => {
           </label>
         </div>
         <Combobox.Options className="search-item-container">
-          {filteredCity.length > 0 ? (
-            filteredCity.map(city => (
-              <Combobox.Option as="Fragment" key={city.c_id} value={city.c_name}>
-                {({ active }) => (
-                  <li className={`background-gray-500 text-gray-100 search-item text-md ${active ? 'background-gray-600' : ''}`}>
-                    {city.c_name}
-                  </li>
-                )}
-              </Combobox.Option>
-            ))
+          {query.length >= 3 ? (
+            filteredCity.length > 0 ? (
+              filteredCity.map(city => (
+                <Combobox.Option as="Fragment" key={city.c_id} value={city.c_name}>
+                  {({ active }) => (
+                    <li className={`background-gray-500 text-gray-100 search-item text-md ${active ? 'background-gray-600' : ''}`}>
+                      {city.c_name}
+                    </li>
+                  )}
+                </Combobox.Option>
+              ))
+            ) : (
+              <li className="background-gray-500 text-gray-100 search-item text-md">No result found</li>
+            )
           ) : (
-            <li className="background-gray-500 text-gray-100 search-item text-md">No result found</li>
+            <li className="background-gray-500 text-gray-100 search-item text-md">Please enter at least 3 characters</li>
           )}
         </Combobox.Options>
       </Combobox>
