@@ -1,9 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import { WeatherProvider } from './store/weather-store.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <WeatherProvider>
+      <App />
+    </WeatherProvider>
   </React.StrictMode>,
 )

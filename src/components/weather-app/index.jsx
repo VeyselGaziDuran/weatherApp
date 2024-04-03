@@ -1,6 +1,6 @@
-import Search from "../search"
+import Search from '../search'
 
-const WatherApp = () => {
+const WeatherApp = () => {
   return (
     <main className="home-container">
       <figure className="img-container">
@@ -11,9 +11,10 @@ const WatherApp = () => {
           Welcome To <span className="text-blue-light">TypeWeather</span>
         </div>
         <div className="text-gray-200 text-sm text-center-wrap">Choose a location to see the weather forecast</div>
-        <Search />
+        <Search/>
       </div>
     </main>
   )
 }
-export default WatherApp
+
+export default WeatherApp

@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import { Combobox } from '@headlessui/react'
 import cityData from '../../data/city.json'
+import { useWeather } from '../../store/weather-store'
 
 const Search = () => {
+  const { setWeatherData } = useWeather()
   const [selectedCity, setSelectedCity] = useState('')
   const [query, setQuery] = useState('')
+
+  const handleSelectCity = city => {
+    setSelectedCity(city)
+    setWeatherData(city)
+  }
 
   const filteredCity =
     query.length > 2
@@ -14,7 +21,7 @@ const Search = () => {
       : []
   return (
     <>
-      <Combobox as="div" className="search-container" value={selectedCity} onChange={setSelectedCity}>
+      <Combobox as="div" className="search-container" value={selectedCity} onChange={city => handleSelectCity(city)}>
         <div className="city-input background-gray-600">
           <Combobox.Input
             className="text-md text-gray-400"
