@@ -3,7 +3,7 @@ import { Combobox } from '@headlessui/react'
 import cityData from '../../data/city.json'
 import { useWeather } from '../../store/weather-store'
 import { fetchWeatherData } from '../../utils/api'
-import Spinner from '../../icons/spinner'
+import Spinner from '../../icons/phosphor-icons/spinner'
 
 const Search = () => {
   const [isPending, setIsPending] = useState(true)
@@ -38,7 +38,7 @@ const Search = () => {
           <label htmlFor="city-input" className="sr-only">
             City
           </label>
-            {isPending ? <Spinner className=" spinner" /> : 'Search'}
+          {isPending ? <Spinner className=" spinner" /> : 'Search'}
         </div>
         <Combobox.Options className="search-item-container">
           {query.length >= 3 ? (
