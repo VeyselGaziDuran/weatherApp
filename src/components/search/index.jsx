@@ -2,15 +2,21 @@ import { useState } from 'react'
 import { Combobox } from '@headlessui/react'
 import cityData from '../../data/city.json'
 import { useWeather } from '../../store/weather-store'
+import { fetchWeatherData } from '../../utils/api'
+import Spinner from '../../icons/spinner'
 
 const Search = () => {
+  const [isPending, setIsPending] = useState(true)
   const { setWeatherData } = useWeather()
   const [selectedCity, setSelectedCity] = useState('')
   const [query, setQuery] = useState('')
 
-  const handleSelectCity = city => {
+  const handleSelectCity = async city => {
+    setIsPending(true)
     setSelectedCity(city)
-    setWeatherData(city)
+    const cityData = await fetchWeatherData(city)
+    setWeatherData(cityData)
+    setIsPending(false)
   }
 
   const filteredCity =
@@ -24,6 +30,7 @@ const Search = () => {
       <Combobox as="div" className="search-container" value={selectedCity} onChange={city => handleSelectCity(city)}>
         <div className="city-input background-gray-600">
           <Combobox.Input
+            disabled={isPending}
             className="text-md text-gray-400"
             placeholder="Search location"
             onChange={event => setQuery(event.target.value)}
@@ -31,12 +38,13 @@ const Search = () => {
           <label htmlFor="city-input" className="sr-only">
             City
           </label>
+            {isPending ? <Spinner className=" spinner" /> : 'Search'}
         </div>
         <Combobox.Options className="search-item-container">
           {query.length >= 3 ? (
             filteredCity.length > 0 ? (
               filteredCity.map(city => (
-                <Combobox.Option as="Fragment" key={city.c_id} value={city.c_name}>
+                <Combobox.Option as="div" key={city.c_id} value={city.c_name}>
                   {({ active }) => (
                     <li className={`background-gray-500 text-gray-100 search-item text-md ${active ? 'background-gray-600' : ''}`}>
                       {city.c_name}
