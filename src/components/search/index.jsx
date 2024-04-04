@@ -6,7 +6,7 @@ import { fetchWeatherData } from '../../utils/api'
 import Spinner from '../../icons/phosphor-icons/spinner'
 
 const Search = () => {
-  const [isPending, setIsPending] = useState(true)
+  const [isPending, setIsPending] = useState(false)
   const { setWeatherData } = useWeather()
   const [selectedCity, setSelectedCity] = useState('')
   const [query, setQuery] = useState('')
@@ -28,7 +28,7 @@ const Search = () => {
   return (
     <>
       <Combobox as="div" className="search-container" value={selectedCity} onChange={city => handleSelectCity(city)}>
-        <div className="city-input background-gray-600">
+        <div className="city-input background-gray-600 spinner-container">
           <Combobox.Input
             disabled={isPending}
             className="text-md text-gray-400"
@@ -38,7 +38,7 @@ const Search = () => {
           <label htmlFor="city-input" className="sr-only">
             City
           </label>
-          {isPending ? <Spinner className=" spinner" /> : 'Search'}
+          {isPending ? <Spinner className="spinner" /> : null}
         </div>
         <Combobox.Options className="search-item-container">
           {query.length >= 3 ? (
