@@ -1,6 +1,7 @@
 @import './root.css';
 @import './weather-app.css';
 @import './search.css';
+@import './weather-info.css';
 
 * {
   margin: 0;
