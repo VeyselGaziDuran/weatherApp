@@ -28,7 +28,7 @@
 .spinner-container .spinner {
   position: absolute;
   top: 50%;
-  left: 92%;
+  right: 0px;
   transform: translateY(-50%);
   animation: spin 1s linear infinite;
 }
