@@ -12,6 +12,7 @@ const WeatherInfo = () => {
       {weatherData && (
         <section className="background-gray-100 ">
           <div className="background-gray-800 card-wrapper">
+            <img src={`assets/bg-img/${weatherData.current.list[0].weather[0].icon}.png`} alt="bg-img" />
             <div>
               <span>
                 {weatherData?.current.city.name}, {weatherData?.current.city.country}
@@ -24,11 +25,13 @@ const WeatherInfo = () => {
                 <span>
                   {weatherData?.weekly.daily[0].temp.min.toFixed(0)}°C / {weatherData?.weekly.daily[0].temp.max.toFixed(0)}°C{' '}
                 </span>
-                <span></span>
+                <span>
+                  <img src={`assets/weather-icons/${weatherData.current.list[0].weather[0].icon}.png`} alt="dynamic-img" />
+                </span>
               </div>
             </div>
           </div>
-          
+
           <div className="background-gray-800 card-wrapper"></div>
           <div className="background-gray-800 card-wrapper"></div>
         </section>
