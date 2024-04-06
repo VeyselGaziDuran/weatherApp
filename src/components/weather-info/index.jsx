@@ -16,7 +16,7 @@ const WeatherInfo = () => {
               <span>
                 {weatherData?.current.city.name}, {weatherData?.current.city.country}
               </span>
-              <span>{formatDateTime(weatherData?.current.list[0].dt_txt)}</span>
+              <span>{formatDateTime(weatherData.current.list[0].dt_txt)}</span>
             </div>
             <div>
               <span>{weatherData?.weekly.current.temp.toFixed(0)}°C</span>
@@ -28,7 +28,7 @@ const WeatherInfo = () => {
               </div>
             </div>
           </div>
-
+          
           <div className="background-gray-800 card-wrapper"></div>
           <div className="background-gray-800 card-wrapper"></div>
         </section>
