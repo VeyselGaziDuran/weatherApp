@@ -19,24 +19,26 @@ const WeatherInfo = () => {
   return (
     <>
       {weatherData && (
-        <section className="background-gray-100 ">
+        <section className="weather-data-section">
           <div className="background-gray-800 card-wrapper">
-            <img src={`assets/bg-img/${weatherData.current.list[0].weather[0].icon}.png`} alt="bg-img" />
-            <div>
+            <img className="bg-img" src={`assets/bg-img/${weatherData.current.list[0].weather[0].icon}.png`} alt="bg-img" />
+            <div className="city-data-wrapper">
               <span className="text-gray-100 heading-sm">
                 {weatherData.current.city.name}, {weatherData.current.city.country}
               </span>
               <span className="text-gray-100 text-xs">{formatDateTime(weatherData.current.list[0].dt_txt)}</span>
             </div>
-            <div>
-              <span className="text-gray-100 heading-xl">{weatherData.current.list[0].main.temp.toFixed(0)}°C</span>
-              <div>
-                <span className="text-gray-100 heading-sm">
-                  {weatherData.weekly[0].min}°C / {weatherData.weekly[0].max}°C{' '}
-                </span>
-                <span className="text-gray-100 text-sm">{weatherData.current.list[0].weather[0].main}</span>
+            <div className="city-​​weather-info">
+              <div className='city-​​weather-wrapper'>
+                <span className="text-gray-100 heading-xl">{weatherData.current.list[0].main.temp.toFixed(0)}°C</span>
+                <div>
+                  <span className="text-gray-100 heading-sm">
+                    {weatherData.weekly[0].min}°C / {weatherData.weekly[0].max}°C{' '}
+                  </span>
+                  <span className="text-gray-100 text-sm">{weatherData.current.list[0].weather[0].main}</span>
+                </div>
               </div>
-              <img src={`assets/weather-icons/${weatherData.current.list[0].weather[0].icon}.png`} alt="dynamic-img" />
+              <img className='city-​​weather-icon' src={`assets/weather-icons/${weatherData.current.list[0].weather[0].icon}.png`} alt="dynamic-img" />
             </div>
           </div>
 
