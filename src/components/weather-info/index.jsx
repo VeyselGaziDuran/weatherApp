@@ -44,27 +44,27 @@ const WeatherInfo = () => {
             <div>
               <ThermometerIcon />
               <span>Thermal sensation</span>
-              <span>26 C</span>
+              <span>{weatherData.current.list[0].main.feels_like.toFixed(0)}°C</span>
             </div>
             <div>
               <CloudIcon />
               <span>Probability of rain</span>
-              <span>26 C</span>
+              <span>{weatherData.current.list[0].pop.toFixed(0)}%</span>
             </div>
             <div>
               <WindIcon />
               <span>Wind speed</span>
-              <span>26 C</span>
+              <span>{weatherData.current.list[0].wind.speed.toFixed(0)} km/h</span>
             </div>
             <div>
               <DropIcon />
               <span>Air humidity</span>
-              <span>26 C</span>
+              <span>{weatherData.current.list[0].main.humidity.toFixed(0)}%</span>
             </div>
             <div>
               <SunIcon />
               <span>UV Index</span>
-              <span>26 C</span>
+              <span>5</span>
             </div>
           </div>
           <div className="background-gray-800 card-wrapper">
