@@ -1,10 +1,19 @@
 import { useWeather } from '../../store/weather-store'
 import { useEffect } from 'react'
-import formatDateTime from '../../utils/format-date'
+import formatDateTime, { getDay } from '../../utils/format-date'
+import CloudIcon from '../../icons/phosphor-icons/cloud'
+import DropIcon from '../../icons/phosphor-icons/drop'
+import ThermometerIcon from '../../icons/phosphor-icons/thermometer'
+import SunIcon from '../../icons/phosphor-icons/sun'
+import WindIcon from '../../icons/phosphor-icons/wind'
+import { weeklyData } from '../../utils/weekly-data'
 
 const WeatherInfo = () => {
   const { weatherData } = useWeather()
   useEffect(() => {
+    if (weatherData) {
+      weeklyData(weatherData.current.list)
+    }
     console.log(weatherData)
   }, [weatherData])
   return (
@@ -15,24 +24,61 @@ const WeatherInfo = () => {
             <img src={`assets/bg-img/${weatherData.current.list[0].weather[0].icon}.png`} alt="bg-img" />
             <div>
               <span className="text-gray-100 heading-sm">
-                {weatherData?.current.city.name}, {weatherData?.current.city.country}
+                {weatherData.current.city.name}, {weatherData.current.city.country}
               </span>
               <span className="text-gray-100 text-xs">{formatDateTime(weatherData.current.list[0].dt_txt)}</span>
             </div>
             <div>
-              <span className="text-gray-100 heading-xl">{weatherData.weekly.current.temp.toFixed(0)}°C</span>
+              <span className="text-gray-100 heading-xl">{weatherData.current.list[0].main.temp.toFixed(0)}°C</span>
               <div>
                 <span className="text-gray-100 heading-sm">
-                  {weatherData.weekly.daily[0].temp.min.toFixed(0)}°C / {weatherData?.weekly.daily[0].temp.max.toFixed(0)}°C{' '}
+                  {weatherData.weekly[0].min}°C / {weatherData.weekly[0].max}°C{' '}
                 </span>
-                <span className="text-gray-100 text-sm">{weatherData.weekly.current.weather[0].main}</span>
+                <span className="text-gray-100 text-sm">{weatherData.current.list[0].weather[0].main}</span>
               </div>
               <img src={`assets/weather-icons/${weatherData.current.list[0].weather[0].icon}.png`} alt="dynamic-img" />
             </div>
           </div>
 
-          <div className="background-gray-800 card-wrapper"></div>
-          <div className="background-gray-800 card-wrapper"></div>
+          <div className="background-gray-800 card-wrapper">
+            <div>
+              <ThermometerIcon />
+              <span>Thermal sensation</span>
+              <span>26 C</span>
+            </div>
+            <div>
+              <CloudIcon />
+              <span>Probability of rain</span>
+              <span>26 C</span>
+            </div>
+            <div>
+              <WindIcon />
+              <span>Wind speed</span>
+              <span>26 C</span>
+            </div>
+            <div>
+              <DropIcon />
+              <span>Air humidity</span>
+              <span>26 C</span>
+            </div>
+            <div>
+              <SunIcon />
+              <span>UV Index</span>
+              <span>26 C</span>
+            </div>
+          </div>
+          <div className="background-gray-800 card-wrapper">
+            {weatherData.weekly.map((day, index) => (
+              <div key={index}>
+                <div>{getDay(day.date)}</div>
+                <img src={`assets/weather-icons/${day.icon}.png`} alt="dynamic-img" />
+                <div>
+                  <span>{day.min}°C</span>
+                  <span>{day.max}°C</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
       )}
     </>

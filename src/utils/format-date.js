@@ -20,4 +20,15 @@ const formatDateTime = datetimeString => {
   return formattedDate
 }
 
+export const getDay = dateString => {
+  const date = new Date(dateString);
+  const options = {
+    weekday: 'short'
+  };
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  return formatter.format(date);
+}
+
+
+
 export default formatDateTime
