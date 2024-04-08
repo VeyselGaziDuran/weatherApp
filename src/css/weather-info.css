@@ -1,3 +1,7 @@
 .card-wrapper {
   border-radius: 12px;
 }
+
+.weather-data-section{
+  margin-top: -300px;
+}
