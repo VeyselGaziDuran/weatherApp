@@ -49,28 +49,28 @@ const WeatherInfo = () => {
           </div>
 
           <div className="background-gray-800 card-wrapper weather-data-list-wrapper">
-            <div className='weather-data-list'>
-              <ThermometerIcon />
+            <div className="weather-data-list">
+              <ThermometerIcon className="weather-Data-list-icon" />
               <span className="text-gray-200 text-bold heading-xs">Thermal sensation</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].main.feels_like.toFixed(0)}°c</span>
             </div>
-            <div className='weather-data-list'>
-              <CloudIcon />
+            <div className="weather-data-list">
+              <CloudIcon className="weather-Data-list-icon" />
               <span className="text-gray-200 text-bold heading-xs">Probability of rain</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].pop.toFixed(0)}%</span>
             </div>
-            <div className='weather-data-list'>
-              <WindIcon />
+            <div className="weather-data-list">
+              <WindIcon className="weather-Data-list-icon" />
               <span className="text-gray-200 text-bold heading-xs">Wind speed</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].wind.speed.toFixed(0)} km/h</span>
             </div>
-            <div className='weather-data-list'>
-              <DropIcon />
+            <div className="weather-data-list">
+              <DropIcon className="weather-Data-list-icon" />
               <span className="text-gray-200 text-bold heading-xs">Air humidity</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].main.humidity.toFixed(0)}%</span>
             </div>
-            <div className='weather-data-list'>
-              <SunIcon />
+            <div className="weather-data-list">
+              <SunIcon className="weather-Data-list-icon" />
               <span className="text-gray-200 text-bold heading-xs">UV Index</span>
               <span className="text-gray-100 text-bold heading-md">5</span>
             </div>
@@ -79,8 +79,8 @@ const WeatherInfo = () => {
             {weatherData.weekly.map((day, index) => (
               <div key={index} className="weekly-data-card">
                 <div className="text-gray-200 text-bold text-sm">{getDay(day.date)}</div>
-                <img src={`assets/weather-icons/${day.icon}.png`} alt="dynamic-img" />
-                <div>
+                <img className="weather-weekly-icon" src={`assets/weather-icons/${day.icon}.png`} alt="dynamic-img" />
+                <div className='weekly-data-degrees'>
                   <span className="heading-sm text-gray-100 text-bold">{day.max}°c</span>
                   <span className="heading-sm text-gray-400 text-bold">{day.min}°c</span>
                 </div>
