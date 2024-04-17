@@ -34,7 +34,7 @@ const WeatherInfo = () => {
                   <span className="text-gray-100 heading-xl text-extrabold">{weatherData.current.list[0].main.temp.toFixed(0)}°C</span>
                   <div>
                     <span className="text-gray-100 heading-md text-bold">
-                      {weatherData.weekly[0].min}°C / {weatherData.weekly[0].max}°C{' '}
+                      {weatherData.weekly[0].min}°c / {weatherData.weekly[0].max}°c{' '}
                     </span>
                     <span className="text-gray-100 text-sm text-bold">{weatherData.current.list[0].weather[0].main}</span>
                   </div>
@@ -48,28 +48,28 @@ const WeatherInfo = () => {
             </div>
           </div>
 
-          <div className="background-gray-800 card-wrapper">
-            <div>
+          <div className="background-gray-800 card-wrapper weather-data-list-wrapper">
+            <div className='weather-data-list'>
               <ThermometerIcon />
               <span className="text-gray-200 text-bold heading-xs">Thermal sensation</span>
-              <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].main.feels_like.toFixed(0)}°C</span>
+              <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].main.feels_like.toFixed(0)}°c</span>
             </div>
-            <div>
+            <div className='weather-data-list'>
               <CloudIcon />
               <span className="text-gray-200 text-bold heading-xs">Probability of rain</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].pop.toFixed(0)}%</span>
             </div>
-            <div>
+            <div className='weather-data-list'>
               <WindIcon />
               <span className="text-gray-200 text-bold heading-xs">Wind speed</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].wind.speed.toFixed(0)} km/h</span>
             </div>
-            <div>
+            <div className='weather-data-list'>
               <DropIcon />
               <span className="text-gray-200 text-bold heading-xs">Air humidity</span>
               <span className="text-gray-100 text-bold heading-md">{weatherData.current.list[0].main.humidity.toFixed(0)}%</span>
             </div>
-            <div>
+            <div className='weather-data-list'>
               <SunIcon />
               <span className="text-gray-200 text-bold heading-xs">UV Index</span>
               <span className="text-gray-100 text-bold heading-md">5</span>
@@ -81,8 +81,8 @@ const WeatherInfo = () => {
                 <div className="text-gray-200 text-bold text-sm">{getDay(day.date)}</div>
                 <img src={`assets/weather-icons/${day.icon}.png`} alt="dynamic-img" />
                 <div>
-                  <span className="heading-sm text-gray-100 text-bold">{day.max}°C</span>
-                  <span className="heading-sm text-gray-400 text-bold">{day.min}°C</span>
+                  <span className="heading-sm text-gray-100 text-bold">{day.max}°c</span>
+                  <span className="heading-sm text-gray-400 text-bold">{day.min}°c</span>
                 </div>
               </div>
             ))}
