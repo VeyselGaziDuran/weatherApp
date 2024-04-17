@@ -1,16 +1,14 @@
 .weather-data-section {
-  margin-top: -100px;
-  width: 100%;
-  height: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .card-wrapper {
   border-radius: 12px;
   padding: 12px;
+  margin: 10px;
+  text-align: center;
   position: relative;
 }
 
@@ -29,4 +27,32 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.weekly-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.weekly-data {
+  display: flex;
+  justify-content: space-around;
+}
+
+.weekly-data-card {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .weather-data-section {
+    align-items: stretch;
+  }
+
+  .card-wrapper {
+    width: 90%;
+    margin: 10px auto;
+  }
 }
