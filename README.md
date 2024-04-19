@@ -7,7 +7,7 @@ This ReactJS project allows users to view the weather forecast for different cit
 - OpenWeatherMap API
 
 ## Project Setup
-1. Clone this repository: `git clone <[repository_url](https://github.com/VeyselGaziDuran/weatherApp)>`
+1. Clone this repository: `git clone <(https://github.com/VeyselGaziDuran/weatherApp)>`
 2. Navigate to the project directory in your terminal: `cd WeatherApp`
 3. Install the required packages by running: `npm install`
 4. Start the development server using Vite: ` npm run dev`
